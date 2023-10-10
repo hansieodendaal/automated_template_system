@@ -1,0 +1,49 @@
+(1) Optional: Install BullZipPDFPrinter if 'create pdf from Word' functionality is required
+    1. Download, extract to new or temp folder and execute BullzipPDFPrinter_X_X_X_XXXX.exe
+       - Version 7_1_0_1218  (Windows XP, 7) 
+	        or
+       - Version 10_1_0_1871 (Windows XP, 7, 8) 
+	        from
+       'https://docs.google.com/folder/d/0B8X2rWHZkb1kY2QxcWRlWElZekE/edit?usp=sharing'
+    2. Read and accept license conditions.
+    3. No need to install AVG Toolbar and search options.
+
+(2) Required: Image Magick
+    1. Download the appropriate 32-bit (x86) or 64-bit (x64) executable installation 
+       file, depending on your version of Windows. This may be any dynamic 
+       6.8.X.X Q8 (8 bits per pixel) or 6.8.X.X Q16 (16 bits per pixel) version ending 
+       with ‘*dll.exe’ in the filename.	
+	        from 
+	     'http://www.imagemagick.org/download/binaries/'
+            or
+         'https://drive.google.com/folderview?id=0B8X2rWHZkb1kLU9iS1VSYUNoT1k&usp=sharing#list'
+    2. Run the executable to install - accept all the default prompts.
+       Notes: Version 7.X.X.X has not passed verification testing yet.
+              This procedure does not need to be repeated for consecutive 
+              Automated Template System updates.
+    
+(2) Copy 'Signature.PNG' to a personal folder on your computer
+
+(3) Create and save personal signature into signature document
+    1.  Scan your signature into a JPG file
+    2.  Using Paint
+        a.  Open 'Signature.PNG'
+        b.  Edit -> Select All, Delete
+        c.  Open your JPG signature file
+        d.  Make sure your signature can fit inside 440 x 220 pixels
+        e.  Select your signature and copy it (selected region must be 
+            <= 440 x 220 pixels)
+        f.  Paste your signature into 'Signature.PNG' and position it in the middle
+        g.  Save 'Signature.PNG'
+
+(4) Automated signature procedure
+    From the document you wish to sign
+    1.  Make sure the document is saved
+    2.  Position cursor where you want to sign
+    3.  Select 'Sign Document' from the Company ribbon under Utils
+        a.  First time use:
+            -   Browse to and select 'Signature.PNG' (with 'Browse' button)
+            -   Type author name and surname
+            -   Select 'Update Fields'
+        b.  Select 'Sign' (Suggest use default options)
+            

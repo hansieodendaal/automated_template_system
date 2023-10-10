@@ -1,0 +1,40 @@
+Another update:
+
+iTunes (and other apps yet to come) may also cause this problem in Win7.
+
+This is because it runs a service which creates registry keys under the SYSTEM account.
+
+When VB tries to enumerate the keys under HKCR\TypeLib it fails and gives the error because the user running VB6.EXE (even if it set to run as administrator) does not automatically have READ rights to the key. At that point you get the "Error accessing the system registry" dialog.
+
+To workaround/fix this:
+
+1. Download Procmon and PsExec from sysinternals.
+
+2. Run Procmon and add a "ProcessName" filter with VB6.EXE as the process name.
+
+3. Then Select Project->References. And the error dialog should pop up.
+
+4. Switch to procmon and scroll to the end of the events list - you're looking for the last "ACCESS_DENIED" message for opening a registry key under HKCR\TypeLib.
+
+5. Thats the first key you need to change permissions on - so you'll need to run regedit in the same account context that the keys were created in - the SYSTEM account. to do this install psexec on the windows PATH somewhere then run:
+
+psexec -i -d -s c:\windows\regedit.exe
+
+(obviously change the path if yours is different)
+
+this will run regedit through the SYSTEM account.
+
+*You can verify that even the administrator account does NOT have permission to edit these keys by running regedit through a Start->Run dialog as this elevates the priv' level to administrator.*
+
+6. Find the key you identified in step 4 - right click it and select Permissions.
+
+7. Find the current logged on user that you use to run VB6 with and add them with full control to the permissions list.
+
+8. Repeat steps 3-7 because there may be more keys that exhibit this behaviour, until the Project->References dialog appears in VB6 without error.
+
+You could also open the .vbp in notepad to see the references if you're stuck and dont have time to do the above..... 
+
+-------------------------------------------
+
+https://answers.microsoft.com/en-us/office/forum/office_2007-customize/a-step-by-step-procedure-for-fixing-error/3c81197e-a237-4fb7-8c8a-d28145f7428e
+

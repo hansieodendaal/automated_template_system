@@ -1,0 +1,13 @@
+Installation:
+
+    Download 'MyCompany_Templates_Install_20XX.XX.XX.zip' and unzip in a temporary folder. 
+    Follow the installation instructions in chapter 3 of the user manual (UserManual_XX.pdf).
+
+    Download link:
+	
+        https://drive.google.com/folderview?id=0B8X2rWHZkb1kdmZQcmhFZkxhUlU&usp=sharing#list
+
+Compatibility:
+
+    Windows XP, Windows 7, Windows 8
+    Microsoft Word 2007, Microsoft Word 2010 (32/64 bit), Microsoft Word 2013 (32/64 bit)

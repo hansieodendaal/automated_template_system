@@ -1,0 +1,12 @@
+Forms can be signed by multiple people; approval process reqired
+
+Forms may have protected form fields; editing restricted to form fields 
+
+UpdateDocumentDataForm may have pre-defined restricted parts; to be decided on by the form creator 
+
+Form creator fills in the form password via coffee cup
+
+A non-empty form password activates restricted UpdateDocumentDataForm parts and protected form fields
+
+Approval process must sense if protected form fields are used, and be able to retrieve user 
+

@@ -1,0 +1,2 @@
+Set BuiltInDocumentProperties("Comments") = "<//([{**** Word 2016 Fields Update Fix ****}])\\>"
+Then UpdateAllFieldsInDocument will not be called

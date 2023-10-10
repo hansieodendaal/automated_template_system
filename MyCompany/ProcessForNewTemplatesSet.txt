@@ -1,0 +1,142 @@
+Pre-requisites:
+- In Word, right click the Ribbon, select 'Customize the Ribbon', then with 'Customize the Ribbon', 
+  enable 'Developer'.
+- Ensure 'C:\Program Files\Microsoft Office\Templates' has write access for all users
+- Unzip 'C:\Templates\Demo\MyCompany_Templates_Install_20XX.XX.XX.zip' to a temporary folder, close all 
+  Office applications and install it accoring to the user manual ('UserManual_A4.pdf' or 'UserManual_Letter.pdf').
+
+Let's assume your company's name is 'XYZCompany':
+
+1.  Make a copy of 'MyCompany' to the project root, e.g. 'C:\Templates\XYZCompany', then 
+    rename all the sub-folder folder name prefixes to correspond to the new company, example 
+    'C:\Templates\XYZCompany\MyCompany_Main' to 'C:\Templates\XYZCompany\XYZCompany_Main'.
+    Note: Do not change the '*.dotm' names yet.
+
+2.  In the main template folder ('C:\Templates\XYZCompany\XYZCompany_Main') open Licence.txt, 
+    change licensed name (with company registry information) to new entity. For example, the line
+    'MyCompanyFullName (registration number for MyCompany),' will change to
+    'XYZCompany (Reg No. XXXX/XXXXXX/XX),'.
+
+3.  Create new company folder name in 'C:\Program Files\Microsoft Office\Templates', 
+    e.g. 'C:\Program Files\Microsoft Office\Templates\XYZCompany' (the templates folder) and
+    enable write permissions (Modify) to that folder for all users (test the access).
+
+4.  Copy the new licence file, 'C:\Templates\XYZCompany\XYZCompany_Main\Licence.txt', the copyright 
+    notice 'C:\Templates\Generic\BaseTemplate\CopyrightNotice.txt' and the licence conditions 'C:\Templates\Generic\BaseTemplate\LicenceConditions.txt' to the templates folder.
+
+5.  Right-click open 'C:\Templates\Generic\BaseTemplate\BaseTemplate.dotm', then, for each new 
+    '*.dotm' template ('MyCompany_Form', 'MyCompany_Letter' and 'MyCompany_Main') do the following 
+    (Note: You may encounter some compile errors until the process is finished):
+    5.1  Right-click open
+    5.2  With macros, 
+            Change internal template name to new template name 
+              i.e. in moduleGlobalDefinitions, Const companyName As String = "XYZCompany"
+            Change internal licensed name to new licensed name
+              i.e. in moduleGlobalDefinitions, Const licensedName As String = "XYZCompany (registration no)"
+            Change project name - apply new company name (right click on the project name, edit properties)
+              e.g. change 'MyCompany_Form' to 'XYZCompany_Form'
+            Note: Do not change (in ThisDocument)    
+                  InsertDemoWatermark companyName:="MyCompany", myParameter:=DOC_BASE_CONTROL
+            (Save the VBA project!)
+    5.4  With 'File -> Save As' Save the Word template to the new template name (EnsureLocalTemplateReadOnly in 
+         BaseTemplate will give error msg until template copied to target folder), example 
+         'MyCompany_Form' will become 'XYZCompany_Form'
+    5.5  Ensure the template you work with has focus, then execute 'UpdateTemplateVariables' in 
+         'moduleGlobalDefinitions' for each new template - runtime erros here means the VBA project and 
+         Word template does not correspond, you can monitor the output in 'View -> Immediate Window' - 
+         (otherwise not able to edit, will be closed automatically due to event callback having wrong 
+         template info in document variables).
+         (Save the VBA project!)
+    5.6  With each new template, change default settings:
+            in 'moduleGlobalDefinitions/AssignGlobals'
+                dateFormatString, ribbonName
+            in 'moduleGlobalDefinitions/PageDefaultSettings'
+                'Default page settings - cm (A4)
+                'Default page settings - cm (Letter)
+                'Default page settings - this doc
+            in 'ThisDocument/Document_New()'
+                Template specific custom document properties' overrides (be cautious!)
+            (Save the VBA project!)
+    5.7  Complete baselining info (the date for now) in 'moduleGlobalDefinitions/AssignRevisionInfo'
+         (Save the VBA project!)
+    5.7  Delete original 'MyCompany*.dotm'
+    5.8 Close the new '*.dotm'
+
+6. From this point, to perfporm any editing on any of the '*.dotm' templates, the licence file 
+   'C:\Templates\XYZCompany\XYZCompany_Main\Licence.txt', the copyright 
+   notice 'C:\Templates\Generic\BaseTemplate\CopyrightNotice.txt' and the licence conditions 
+   'C:\Templates\Generic\BaseTemplate\LicenceConditions.txt' must always be present in 
+   'C:\Program Files\Microsoft Office\Templates\XYZCompany' or otherwise the template will close.
+
+7.  In 'XYZCompany_Competency_db' folder, 
+    7.1  Change company name in 2 x database file names
+    7.2  With competency database, search and replace company name in macros
+
+8.  In 'XYZCompany_Template_db' folder, 
+    8.1  Change company name in 4 x database file names
+
+9.  For each '*.dotm' template, with CustomUIEditor (C:\Templates\Generic\CustomUIEditor), open the template 
+    and change the label for company name to be displayed on the ribbon, '<tab id="CustomTab1" label="MyC">', 
+    in both instances (customUI14.xml, customui.xml). Double-click, edit, save. For example, change it to 
+    '<tab id="CustomTab1" label="XYZ">'.
+
+10.  Double-click the main template in 'C:\Templates\XYZCompany\XYZCompany_Main', accept all prompts, save to 
+    `C:\Templates\XYZCompany\XYZCompany_Main\BlankXYZCompanyDoc.docx`. Then, CTRL-A to select all the content 
+    and Delete it. Change the company logo in the header, change company name in footer. Save. Delete the 
+    original 'BlankMyCompanyDoc.docx'.
+
+11. Copy the new '*.dotm' templates to teh templates folder, e.g. 
+    'C:\Program Files\Microsoft Office\Templates\XYZCompany', then create a new document for each templatre from 
+    that location by double-clicking on it, save and exit.
+
+12. Within 'C:\Templates\Generic\VBASecurity'
+    12.1 Using 'regedit.exe', export [HKEY_CURRENT_USER\Software\Microsoft\Office\XX.0\Common\General] 
+         to 'Word-General-XYZCompany.reg' and only keep value for "SharedTemplates" key (will contain 
+         information for the new templates).
+         Note: 'XX.0' must be the latest version available.
+    12.2 Create registration file for new template, thus copy 'Reg-Office-MyCompany.reg' to 
+         'Reg-Office-XYZCompany.reg'.
+    12.3 With 'Reg-Office-XYZCompany.reg', replace 'MyCompany' with new company name throughout. For example,
+         "Path"="C:\\Program Files\\Microsoft Office\\Templates\\MyCompany\\" will change to 
+         "Path"="C:\\Program Files\\Microsoft Office\\Templates\\XYZCompany\\"
+    12.4 With 'Reg-Office-XYZCompany.reg', replace "SharedTemplates" key throughout with that 
+         for new company as in 'Word-General-XYZCompany.reg'. 
+         The key looks like this:
+           "SharedTemplates"=hex(2):43,00,3a,00,5c,00,50,00,72,00,6f,00,67,00,72,00,61,00,\
+             6d,00,20,00,46,00,69,00,6c,00,65,00,73,00,5c,00,4d,00,69,00,63,00,72,00,6f,\
+             00,73,00,6f,00,66,00,74,00,20,00,4f,00,66,00,66,00,69,00,63,00,65,00,5c,00,\
+             54,00,65,00,6d,00,70,00,6c,00,61,00,74,00,65,00,73,00,5c,00,4d,00,79,00,43,\
+             00,6f,00,6d,00,70,00,61,00,6e,00,79,00,5c,00,00,00
+
+13. Prepare the installation and distribution package scripts - in 'C:\Templates\XYZCompany':
+    13.1 Rename 'Deploy_MyCompany_Templates.bat' for the new company, e.g. 
+         to 'Deploy_XYZCompany_Templates.bat'
+    13.2 Change the company name in 'Deploy_XYZCompany_Templates.bat' to 'XYZCompany'
+    13.3 Open all *.bat files in 'C:\Templates\XYZCompany', replace company name with new company name - 
+         change `set company=MyCompany` to `set company=XYZCompany`.
+
+14. Change the template layouts, fonts, content, etc. as required - this process must be followed for every 
+    change to any of the '*.dotm' templates:
+    14.1 With 'BaseTemplate' project, run 'moduleCompareTemplate/UnlockActiveDocument' to unlock the respective
+         template.
+    14.2 Perform any changes required to the layout. For example, with each '*.dotm' template:
+         - Change company logo (on front page, in header. etc.)
+         - Change company name throughout document, also in footer
+        (Save the '*.dotm' template!)
+    14.3 With 'BaseTemplate' project, run 'moduleCompareTemplate/LockActiveTemplateDocument' to lock the respective
+         template.
+
+15. Deploy and test the installation package:
+    15.1 To deploy, run 'Deploy_MyCompany_Templates.bat'. The installation package will be located in 
+         'C:\Program Files\Microsoft Office\Templates\zzInstallationPackages\XYZCompany_Templates_Install'.
+    15.2 Close all Office applications and perform the installation from 'XYZCompany_Templates_Install' as 
+         per the user manual.
+    15.3 Open Word and select a blank document.
+    15.4 With 'File->New' select 'Shared' and in turn create new a document for each of the 3 template types
+         (but not for 'BaseTemplate' as that will just creat an empty document).
+
+16. Ensure all items in 'C:\Templates\XYZCompany' are checked into GitHub.
+
+17. Zip and distribute the installation package.
+
+
