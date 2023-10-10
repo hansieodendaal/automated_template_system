@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui">
+<ribbon>
+  <tabs>
+
+    <tab id="CustomTab1" label="MyC">
+      <group id="CustGrp1" label="Doc Control" >
+        <button id="Btn1" screentip="Update Document" label="Update" size = "normal" 
+             image="ButtonUpdateDocDataForm" onAction="moduleRibbonControl.MyBtnMacro" />
+        <button id="Btn3" screentip="Export Properties" label="Export Prp" size = "normal" 
+             image="ButtonExportDocumentProperties" onAction="moduleRibbonControl.MyBtnMacro" />
+        <button id="Btn4" screentip="Import Properties" label="Import Prp" size = "normal" 
+             image="ButtonImportDocumentProperties" onAction="moduleRibbonControl.MyBtnMacro" />
+        <button id="Btn5" screentip="Export Configuration" label="Export Cfg" size = "normal" 
+             image="ButtonExportDocConfigData" onAction="moduleRibbonControl.MyBtnMacro" />
+        <button id="Btn6" screentip="Import Configuration" label="Import Cfg" size = "normal" 
+             image="ButtonImportDocConfigData" onAction="moduleRibbonControl.MyBtnMacro" />
+        <dialogBoxLauncher >
+          <button idMso="AdvancedFileProperties" label="Document Properties" visible="true"/>
+        </dialogBoxLauncher>
+      </group>
+      <group id="CustGrp2" label="Page Setup" >
+        <button id="Btn7" screentip="Insert Landscape" label="Insert L" size = "normal" 
+             image="ButtonInsertLandscapeSection" onAction="moduleRibbonControl.MyBtnMacro" />
+        <button id="Btn8" screentip="Insert Portrait" label="Insert P" size = "normal" 
+             image="ButtonInsertPortraitSection" onAction="moduleRibbonControl.MyBtnMacro" />
+        <button id="Btn9" screentip="Setup Landscape" label="Setup L" size = "normal" 
+             image="ButtonPageSetupLandscape" onAction="moduleRibbonControl.MyBtnMacro" />
+        <button id="Btn10" screentip="Setup Portrait" label="Setup P" size = "normal" 
+             image="ButtonPageSetupPortrait" onAction="moduleRibbonControl.MyBtnMacro" />
+        <button id="Btn22" screentip="Page Defaults" label="Defaults" size = "normal" 
+             image="ButtonPageDefaults" onAction="moduleRibbonControl.MyBtnMacro" />
+      </group>
+      <group id="CustGrp3" label="Table" >
+        <button id="Btn11" label="Format Table" size = "normal" 
+             image="ButtonFormatTable" onAction="moduleRibbonControl.MyBtnMacro" />
+        <button id="Btn12" label="Table Header" size = "normal" 
+             image="ButtonFormatTableHeaderOnly" onAction="moduleRibbonControl.MyBtnMacro" />
+        <button id="Btn13" label="Abbreviations" size = "normal" 
+             image="ButtonCompileAbbreviationsTable" onAction="moduleRibbonControl.MyBtnMacro" />
+      </group>
+      <group id="CustGrp4" label="Styles" >
+         <button id="Btn14" screentip="Outline Numbering" label="Outline No." size = "normal" 
+              image="ButtonOutlineListNumbering" onAction="moduleRibbonControl.MyBtnMacro" />
+        <button id="Btn15" label="Delete Styles" size = "normal" 
+             image="ButtonStyles_DeleteThoseNotInBaseTemplate" onAction="moduleRibbonControl.MyBtnMacro" />
+        <button id="Btn2" label="Update Case" size = "normal" 
+             image="ButtonUpdateHeadingCase" onAction="moduleRibbonControl.MyBtnMacro" />
+        <dialogBoxLauncher >
+          <button idMso="StylesPane" />
+        </dialogBoxLauncher>
+      </group>
+      <group id="CustGrp5" label="Utils" >
+        <button id="Btn16" label="Insert Symbol" size = "normal" 
+             image="ButtonTypeDegC" onAction="moduleRibbonControl.MyBtnMacro" />
+        <button id="Btn17" label="Insert Equation" size = "normal" 
+             image="ButtonImportInsertEquation" onAction="moduleRibbonControl.MyBtnMacro" />
+        <button id="Btn18" label="Sign Document" size = "normal" 
+             image="ButtonSignDocument" onAction="moduleRibbonControl.MyBtnMacro" />
+        <button id="Btn19" label="Caption Table" size = "normal" 
+             image="ButtonCaptionTable" onAction="moduleRibbonControl.MyBtnMacro" />
+        <button id="Btn20" label="Caption Figure" size = "normal" 
+             image="ButtonCaptionFigure" onAction="moduleRibbonControl.MyBtnMacro" />
+        <button id="Btn23" label="Requirements" size = "normal" 
+             image="ButtonRequirementsTable" onAction="moduleRibbonControl.MyBtnMacro" />
+        <button id="Btn24" label="Clauses" size = "normal" 
+             image="ButtonClauses" onAction="moduleRibbonControl.MyBtnMacro" />
+      </group>
+    </tab>
+
+    <tab idMso="TabHome">
+      <group idMso="GroupStyles" visible="false" />
+      <group id="CustomGroup" label="Styles" insertBeforeMso="GroupEditing">
+        <control idMso="StyleGalleryClassic" label="Style" visible="true"/>
+        <control idMso="ListLevelGallery" label="List Level" visible="true"/>
+        <dialogBoxLauncher >
+          <button idMso="StylesPane" />
+        </dialogBoxLauncher>
+      </group>
+    </tab>
+
+  </tabs>
+</ribbon>
+</customUI>

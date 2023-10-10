@@ -1,0 +1,232 @@
+([{**** Document Config Information ****}])
+<//DocDocumentClassification\\>
+Doc Config Classification?
+
+<//DocSecurityClassification\\>
+Proprietary Class 1
+
+<//DocSecurityClassificationValidation\\>
+True
+
+<//DocNumber\\>
+0xxxxx
+
+<//DocIssue\\>
+A
+
+<//DocIssueDate\\>
+2014/08/08
+
+<//DocCompileDate\\>
+n/a
+
+<//DocTitleSystem\\>
+System or Area?
+
+<//DocTitleFunction\\>
+Function Described?
+
+<//DocTitleType\\>
+Description
+
+<//DocTitleTypeValidation\\>
+True
+
+<//DocProject\\>
+Project XXX
+
+<//DocProjectPhase\\>
+Concept
+
+<//DocYear\\>
+2014
+
+<//DocTemplateVersion\\>
+Revision_A
+
+<//DocCreatedVersion\\>
+Revision_A
+
+<//DocTOCLevel\\>
+9
+
+<//DocPreparerFunction\\>
+Preparer
+
+<//DocPreparerName\\>
+Preparer Name?
+
+<//DocPreparerDesignation\\>
+Preparer Designation?
+
+<//DocReviewer1Function\\>
+Comments Reviewer
+
+<//DocReviewer1Name\\>
+Reviewer1 Name?
+
+<//DocReviewer1Designation\\>
+Reviewer1 Designation?
+
+<//DocReviewer2Function\\>
+Comments Reviewer
+
+<//DocReviewer2Name\\>
+Reviewer2 Name?
+
+<//DocReviewer2Designation\\>
+Reviewer2 Designation?
+
+<//DocReviewer3Function\\>
+Comments Reviewer
+
+<//DocReviewer3Name\\>
+Reviewer3 Name?
+
+<//DocReviewer3Designation\\>
+Reviewer3 Designation?
+
+<//DocReviewer4Function\\>
+n\a
+
+<//DocReviewer4Name\\>
+n\a
+
+<//DocReviewer4Designation\\>
+n\a
+
+<//DocReviewer5Function\\>
+n\a
+
+<//DocReviewer5Name\\>
+n\a
+
+<//DocReviewer5Designation\\>
+n\a
+
+<//DocReviewer6Function\\>
+n\a
+
+<//DocReviewer6Name\\>
+n\a
+
+<//DocReviewer6Designation\\>
+n\a
+
+<//DocApproverFunction\\>
+Approver
+
+<//DocApproverName\\>
+Approver Name?
+
+<//DocApproverDesignation\\>
+Approver Designation?
+
+<//DocCreateDate\\>
+2013/08/30
+
+<//DocStatus\\>
+Draft
+
+<//DocStatusValidation\\>
+True
+
+<//DocPageNumbers\\>
+13
+
+<//DocLayout\\>
+DLT-XXX Rev X
+
+<//DocCompetencyValidation\\>
+False
+
+<//DocResourceValidation\\>
+False
+
+<//DocCompetencyArea\\>
+Competency Area?
+
+<//DocForceFileName\\>
+False
+
+<//DocFileName\\>
+n/a
+
+<//DocLeftMargin\\>
+2
+
+<//DocRightMargin\\>
+2
+
+<//DocTopMargin\\>
+2.2
+
+<//DocBottomMargin\\>
+2.2
+
+<//DocPageWidth\\>
+21
+
+<//DocPageHeight\\>
+29.7
+
+<//DocHeaderDistance\\>
+0.7
+
+<//DocFooterDistance\\>
+0.7
+
+<//DocRecipientName\\>
+Recipient Name?
+
+<//DocRecipientDesignation\\>
+Recipient Designation?
+
+<//DocRecipientAddress\\>
+Recipient Address?
+
+<//DocTOCStylesInclude\\>
+HEADER ABBREVIATIONS,1,ARTICLE,1,APPENDIX,1
+
+<//DocTOCStyles1\\>
+HEADER ABBREVIATIONS
+
+<//DocTOCStyles2\\>
+ARTICLE
+
+<//DocTOCStyles3\\>
+APPENDIX
+
+<//DocTOCStyles4\\>
+
+
+<//DocTOCStyles5\\>
+
+
+<//DocDefaultTabStopcm\\>
+1.2
+
+<//DocPreparerDate\\>
+
+
+<//DocReviewer1Date\\>
+
+
+<//DocReviewer2Date\\>
+
+
+<//DocReviewer3Date\\>
+
+
+<//DocReviewer4Date\\>
+
+
+<//DocReviewer5Date\\>
+
+
+<//DocReviewer6Date\\>
+
+
+<//DocApproverDate\\>
+
+

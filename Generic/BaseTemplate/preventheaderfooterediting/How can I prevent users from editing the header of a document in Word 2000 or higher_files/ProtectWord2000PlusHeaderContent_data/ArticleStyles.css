@@ -1,0 +1,57 @@
+P {font-family: Arial, sans-serif; font-size: 10pt; margin-top:0; margin-bottom: 6pt;}
+P.Author {font-size:8pt; text-align:Right; margin-top:1em; margin-bottom:1em;}
+p.BodyText  { text-align: left; line-height: 1.1em; margin-left: 2em; margin-top: 0; margin-bottom: 0.6em;}
+p.BodyTextIndent { line-height: 100%; margin-left: 5em; margin-bottom: 0.6em;}
+p.BodyTextPreList {text-align: left; margin-left: 2em; margin-top:4pt; margin-bottom:1pt;}
+P.Caption {color:#00007F; font-size:8pt; font-weight:bold; text-align: Center;}
+P.Index {color:#000000; font-size:8pt; font-weight:bold; margin-top:0; margin-bottom:0.2 em;}
+P.Macro {font-family: Arial, sans-serif; font-size: 9pt;; margin-top:0; margin-bottom:1em; margin-left:1em;}
+P.MacroComment {font-family: Arial, sans-serif; font-size:x-small; margin-top:0; margin-bottom:0; margin-left:1em; color:green;}
+P.MVPTableLeft {color: #000000; font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold; margin-left:3; margin-right:3;}
+P.MVPTableText {color: #000000; font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal; margin-left:3; margin-right:3;}
+P.MVPTableTitle {color: #2E625C; font-family: Arial, sans-serif; font-size: 12pt; font-weight: bold; font-style: italic;}
+p.PageBottom {margin-bottom:0.3em;}
+P.PDF {color:#A4A4AA; font-size:8pt;}
+p.PreList {margin-top:4pt; margin-bottom:1pt;}
+P.SubTitle {font-style : italic; 	margin-top : 0.8em; margin-bottom:0;}
+P.TableTitle {color: #FFFFFF; font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold; text-align: Center;}
+P.TableText {margin-left:2; margin-right:2;}
+p.TOC { font-size: 8pt; font-weight: bold, margin-top:0; margin-bottom:0;}
+
+td  { font-family: Arial; font-size: 10pt }
+
+UL {list-style-image:url('../Images/BulletShadedSmall.jpg');}
+OL {list-style-type: decimal; 	margin-left: 25; margin-top: 0pt; margin-bottom:8pt; text-indent: 2;}
+li {color: #000000; font-family: Arial, sans-serif; font-size:10pt; text-align:left; margin-top:0 pt; margin-bottom:5 pt;}
+
+H1 {color: #00007F; font-family: Arial, sans-serif; font-size:14pt; font-weight: bold; 	text-align: left;	margin-top:0; margin-bottom:2pt; margin-right : 0.2em;}
+H2 {color: #00007F; font-family: Arial, sans-serif; font-size: 12pt; font-weight: bold; text-align: left; margin-top:14pt; margin-bottom:2 pt;}
+H3 {color: #00007F; font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold; text-align: left; margin-top:10pt; margin-bottom:2pt;}
+
+A:link {color:#CA6500; font-weight:bold; text-decoration: none;}
+A:visited {color:#D27C3C; font-weight:bold; text-decoration: none;}
+A:hover {color:#008000; text-decoration: none;}
+
+a.H:link {color:#00007F; text-decoration: none;}
+a.H:visited {color:#00007F; text-decoration: none;}
+a.H:hover {color:#008000; text-decoration: none;}
+
+a.Index:link {color:#B71A1D; text-decoration: none; font-size: 8pt; font-weight: bold;}
+a.Index:visited {color:#B71A1D; text-decoration: none; font-size: 8pt; font-weight: bold;}
+a.Index:hover {color:#E02C30; text-decoration: none; font-size: 8pt; font-weight: bold;}
+
+a.Toc:link {color:#B71A1D; text-decoration: none; font-size: 8pt; font-weight: bold;}
+a.Toc:visited {color:#CF6F71; text-decoration: none; font-size: 8pt; font-weight: bold;}
+a.Toc:hover {color:#E02C30; text-decoration: none; font-size: 8pt; font-weight: bold;}
+
+a.List:link {color:#CA6500; text-decoration: none; font-weight: normal;}
+a.List:visited {color:#CA6500; text-decoration: none; font-weight: normal;}
+a.List:hover {color:#008000; text-decoration: none; font-weight: normal;}
+
+a.StatusBar:link {color:#000000; text-decoration: none; font-weight: bold;}
+a.StatusBar:visited {color:#000000; text-decoration: none; font-weight: bold;}
+a.StatusBar:hover {color:#7F7F7F; text-decoration: none; font-weight: bold;}
+
+a.Author:link {color:#B71A1D; text-decoration: none; font-weight: bold;}
+a.Author:visited {color:#B71A1D; text-decoration: none; font-weight: bold;}
+a.Author:hover {color:#E02C30; text-decoration: none; font-weight: bold;}

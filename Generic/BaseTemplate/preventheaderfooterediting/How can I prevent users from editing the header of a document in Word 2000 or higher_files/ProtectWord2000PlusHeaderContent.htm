@@ -1,0 +1,153 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>How can I prevent users from editing the header of a document in Word 2000 or higher?</title>
+<link rel="stylesheet" type="text/css" href="ProtectWord2000PlusHeaderContent_data/ArticleStyles.css">
+<!-- base href="http://word.mvps.org/FAQs/Customization/ProtectWord2000PlusHeaderContent.htm" -->
+<script type="text/javascript" src="ProtectWord2000PlusHeaderContent_data/hover.js"></script>
+</head>
+
+<body onload="window.focus()" topmargin="0" leftmargin="0" alink="#ff0000" bgcolor="#7F7F7F" link="#0000ff" marginheight="0" marginwidth="0" text="#000000" vlink="#800080">
+<div id="tooltip" style="position:absolute;visibility:hidden;"></div>
+<table cellpadding="0" cellspacing="0" height="100%" width="100%">
+<tbody><tr><td valign="top">&nbsp;
+<table border="0" cellpadding="0" cellspacing="0" align="center" bgcolor="#FFFFFF" width="584">
+<tbody>
+<tr>
+<td background="ProtectWord2000PlusHeaderContent_data/WordPageTopLeft.gif" valign="top">&nbsp;</td>
+<td background="ProtectWord2000PlusHeaderContent_data/WordPageTop.gif" valign="top">&nbsp;</td>
+<td background="ProtectWord2000PlusHeaderContent_data/WordPageTopRight.gif">&nbsp;</td>
+</tr>
+<tr>
+<td background="ProtectWord2000PlusHeaderContent_data/WordPageLeft.gif" valign="top"><img src="MainMenu_data/PlaceHolder.gif" border="0" height="250" width="32"></td>
+<!-- Height of graphic in line above determines minumum height of "Word Page" (if page exceeeds that height, the graphic gets tiled). Can't specify row heigth because Netsacpe ignores it! -->
+<td align="left" valign="top" width="524">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td valign="top" width="117">
+ <p class="PDF">
+ </p>
+</td>
+<td valign="top" width="268">
+ <p class="PDF">
+ </p>
+</td>
+<td rowspan="2" width="124">
+<img src="ProtectWord2000PlusHeaderContent_data/MVPLogoWhiteBkrnd.gif" border="0" height="110" width="124"></td>
+</tr>
+<tr>
+<td colspan="2" valign="bottom" width="387">
+<h1>How can I prevent users from editing the header of a document in Word 2000 or higher?</h1>
+</td>
+</tr>
+</tbody></table>
+<p class="Author">
+Article contributed by <a href="http://word.mvps.org/AboutMVPs/bill_coan.htm"> Bill Coan</a> 
+<a href="http://www.wordsite.com/">
+<img src="ProtectWord2000PlusHeaderContent_data/URLLogo.gif" alt="Bill's web site" border="0" align="absmiddle" height="16" width="16"></a></p>
+<p>The following code, pasted into the This Document module of a Word 2000 Template, will keep users
+out of the header and footer of documents based on that template.</p>
+<p>For <a href="http://word.mvps.org/FAQs/Customization/ProtectWord97Header.htm">Word 97, click here</a></p>
+<p class="Macro">
+<font color="#00007F">
+Option Explicit
+<br>
+</font>
+<font color="#007F00">'reserve memory for an application variable
+<br> </font>
+<font color="#00007F">
+Private WithEvents </font> wdApp <font color="#00007F"> As </font> Word.Application
+<br>
+<br> <font color="#00007F"> Private Sub </font> Document_New()
+<br>
+&nbsp;&nbsp;&nbsp;
+<font color="#007F00">'assign Word to the application variable
+<br> &nbsp;&nbsp;&nbsp; </font>
+If wdApp Is Nothing Then
+<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#00007F">Set </font> wdApp = ThisDocument.Application
+<br> &nbsp;&nbsp;&nbsp; End If
+<br> <font color="#00007F"> End Sub
+</font>
+</p>
+<hr>
+<p class="Macro">
+<font color="#00007F">
+ Private Sub </font> Document_Open()
+<br>
+<font color="#007F00">'assign Word to the application variable
+<br> </font>
+If wdApp Is Nothing Then
+<br> &nbsp;&nbsp;&nbsp; <font color="#00007F">Set </font> wdApp = ThisDocument.Application
+<br> End If
+<br> <font color="#00007F"> End Sub</font>
+</p>
+<hr>
+<p class="Macro">
+ <font color="#00007F"> Private Sub </font> wdApp_WindowSelectionChange(ByVal Sel
+<font color="#00007F"> As </font> Selection)
+<br>
+&nbsp;&nbsp;&nbsp;
+<font color="#007F00">'quit if active doc isn't attached to this template
+<br> &nbsp;&nbsp;&nbsp; </font>
+If ActiveDocument.AttachedTemplate &lt;&gt; ThisDocument Then Exit Sub
+<br>
+&nbsp;&nbsp;&nbsp;
+<font color="#007F00">'get out of the header/footer if we're in it<br>
+&nbsp;&nbsp;&nbsp; </font>
+<font color="#00007F">Select Case</font> Sel.StoryType
+<br> &nbsp;&nbsp;&nbsp; <font color="#00007F">Case</font> wdEvenPagesFooterStory, wdEvenPagesHeaderStory,
+_<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+wdFirstPageFooterStory, wdFirstPageHeaderStory, _<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+wdPrimaryFooterStory, wdPrimaryHeaderStory<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ActiveWindow.ActivePane.View.SeekView = wdSeekMainDocument<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#00007F">Exit Sub</font><br>
+&nbsp;&nbsp;&nbsp; <font color="#00007F">Case Else
+<br> &nbsp;&nbsp;&nbsp; End Select</font><br>
+<br> <font color="#00007F"> End Sub</font></p>
+</td>
+<td background="ProtectWord2000PlusHeaderContent_data/WordPageRight.gif" valign="top"> 
+	<p><img src="ProtectWord2000PlusHeaderContent_data/TermsofUseSlice1.gif" border="0" height="81" width="32"><br>
+    <a href="http://word.mvps.org/TermsofUse.htm" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('TermsOfUse','','../../Images/OtherPics/TermsofUseSlice2Bottom.gif',1)"><img src="ProtectWord2000PlusHeaderContent_data/TermsofUseSlice2.gif" alt="Click to view Terms of Use page" name="TermsOfUse" border="0" height="71" width="32"></a><br>
+	<img src="ProtectWord2000PlusHeaderContent_data/TermsofUseSlice3.gif" border="0" height="18" width="32"><br>
+	<a href="http://word.mvps.org/Disclaimer.htm" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Disclaimer','','../../Images/OtherPics/TermsofUseSlice4Bottom.gif',1)"><img src="ProtectWord2000PlusHeaderContent_data/TermsofUseSlice4.gif" alt="Click to view Disclaimer page" name="Disclaimer" border="0" height="60" width="32"></a><br>
+	<img src="ProtectWord2000PlusHeaderContent_data/TermsofUseSlice5.gif" border="0" height="20" width="32"></p>
+</td>
+</tr>
+<tr>
+<td background="ProtectWord2000PlusHeaderContent_data/WordPageBottomLeft.gif" valign="top">
+  <p class="PageBottom">&nbsp;</p>
+</td>
+<td background="ProtectWord2000PlusHeaderContent_data/WordPageBottom.gif" valign="top">
+  <p class="PageBottom">&nbsp;&nbsp;</p>
+</td>
+<td background="ProtectWord2000PlusHeaderContent_data/WordPageBottomRight.gif" valign="top">
+  <p class="PageBottom">&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+</td>
+</tr>
+<tr>
+<td valign="bottom">
+&nbsp;
+</td>
+</tr>
+</tbody></table>
+
+
+<script type="text/javascript"><!--
+if ((document.layers && window.innerWidth != 0 && window.innerHeight != 0 && window.name != 'main') || (!document.layers && window.name != 'main'))
+top.location.replace('ProtectWord2000PlusHeader.htm');//-->
+
+agentType=navigator.appName
+if ((agentType!="Microsoft Internet Explorer")){
+ { if( self != top )
+    parent.footer.location.reload();}}
+//-->
+</script>
+</body></html>

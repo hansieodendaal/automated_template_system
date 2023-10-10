@@ -1,0 +1,21 @@
+This automated template system is only licensed
+to a Licensee by Johannes (Hansie) Abraham Odendaal,
+hereafter called the Licensor, if
+lawfully obtained and correctly installed.
+This licence is a nonexclusive licence
+for the exclusive use and direct or indirect
+business of the Licensee by any of its direct
+or indirect employees or contractors whereby
+information is captured in documents authorized
+by the Licensee where such documents is based on
+or makes use of this template system.
+This licence is applicable to any version of the
+template system that has specifically been released
+to the Licensee by the Licensor.
+This licence does not entitle the Licensee to future
+upgrades or releases of the template system unless
+agreed to between the Licensor and the Licensee on
+a case by case basis.
+This license does not infringe on the copyright.
+This licence is in automatic effect if the
+template system is installed.
